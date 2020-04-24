@@ -24,6 +24,7 @@ import {
 const Header = ({ currentUser, hidden, signOutStart }) => (
   <HeaderContainer>
     <LogoContainer to='/'>
+
       <Logo className='logo' />
     </LogoContainer>
     <OptionsContainer>
