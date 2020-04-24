@@ -10,7 +10,7 @@ import { signUpStart } from '../../redux/user/user.actions';
 
 // import './sign-up.styles.scss';
 
-import { SignUpContainer, TitleContainer } from './sign-up.styles';
+import { SignUpContainer, SignUpTitle } from './sign-up.styles';
 
 class SignUp extends React.Component {
   constructor() {
@@ -45,10 +45,9 @@ class SignUp extends React.Component {
 
   render() {
     const { displayName, email, password, confirmPassword } = this.state;
-
     return (
       <SignUpContainer>
-        <TitleContainer>I do not have an account</TitleContainer>
+        <SignUpTitle>I do not have a account</SignUpTitle>
         <span>Sign up with your email and password</span>
         <form className='sign-up-form' onSubmit={this.handleSubmit}>
           <FormInput
@@ -59,7 +58,6 @@ class SignUp extends React.Component {
             label='Display Name'
             required
           />
-
           <FormInput
             type='email'
             name='email'
@@ -68,7 +66,6 @@ class SignUp extends React.Component {
             label='Email'
             required
           />
-
           <FormInput
             type='password'
             name='password'
@@ -77,7 +74,6 @@ class SignUp extends React.Component {
             label='Password'
             required
           />
-
           <FormInput
             type='password'
             name='confirmPassword'

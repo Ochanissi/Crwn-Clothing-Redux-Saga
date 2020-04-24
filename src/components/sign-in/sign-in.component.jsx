@@ -4,18 +4,18 @@ import { connect } from 'react-redux';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 
+// import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
+
 import {
   googleSignInStart,
   emailSignInStart,
 } from '../../redux/user/user.actions';
 
-// import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
-
 // import './sign-in.styles.scss';
 
 import {
   SignInContainer,
-  TitleContainer,
+  SignInTitle,
   ButtonsContainer,
 } from './sign-in.styles';
 
@@ -45,18 +45,17 @@ class SignIn extends React.Component {
 
   render() {
     const { googleSignInStart } = this.props;
-
     return (
       <SignInContainer>
-        <TitleContainer>I already have an account</TitleContainer>
+        <SignInTitle>I already have an account</SignInTitle>
         <span>Sign in with your email and password</span>
 
         <form onSubmit={this.handleSubmit}>
           <FormInput
             name='email'
             type='email'
-            value={this.state.email}
             handleChange={this.handleChange}
+            value={this.state.email}
             label='email'
             required
           />
@@ -68,14 +67,14 @@ class SignIn extends React.Component {
             label='password'
             required
           />
-
           <ButtonsContainer>
-            <CustomButton type='submit' value='Submit Form'>
-              Sign in
-            </CustomButton>
-            <CustomButton onClick={googleSignInStart} isGoogleSignIn>
-              {' '}
-              Sign in with Google{' '}
+            <CustomButton type='submit'> Sign in </CustomButton>
+            <CustomButton
+              type='button'
+              onClick={googleSignInStart}
+              isGoogleSignIn
+            >
+              Sign in with Google
             </CustomButton>
           </ButtonsContainer>
         </form>
